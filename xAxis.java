@@ -2,13 +2,13 @@ import java.awt.Point;
 import java.util.ArrayList;
 
 public class xAxis {
-	 int x = 0 ;
+         int x = 0 ;
      int y = Main.screenY/2 ;
      
       ArrayList <Point> points = new ArrayList<Point> ();
-	 
-	
-	  public xAxis (int startX)
+         
+        
+          public xAxis (int startX)
       {
               calculatePoints (startX);
       }
@@ -26,16 +26,16 @@ public class xAxis {
                       nextPoint();
               }                   
       }
-	 
-	 
-	
+         
+         
+        
         
      
      public void nextPoint ()
      {         
-    	 
+         
           
-    	  x+= 100;
+          x+= 100;
          Point newPoint2 = new Point (x + Main.finalOffsetX,y + Main.finalOffsetY);
          points.add(newPoint2); 
             

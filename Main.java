@@ -19,22 +19,22 @@ import javax.swing.JApplet;
 @SuppressWarnings("serial")
 public class Main extends Applet implements Runnable, ActionListener{
 
-	
-	   static int screenX = 800;
-	    static int screenY = 600;
-	    static int scale = 100; // 100 pixels = 1 unit
+        
+       static int screenX = 800;
+       static int screenY = 600;
+       static int scale = 100; // 100 pixels = 1 unit
 
-	private    double dScale = 1.1;// delta scale, or change in scale
+        private    double dScale = 1.1;// delta scale, or change in scale
 
-	private   Button Clear, Submit;
-	private   TextField function; 
-	private   Label function_Label;
+        private   Button Clear, Submit;
+        private   TextField function; 
+        private   Label function_Label;
 
-	private   Graph g1;
-	private   xAxis xAxis;
-	private   yAxis yAxis;
-	//private  xAxis xScale;
-	//private  yAxis yScale;
+        private   Graph g1;
+        private   xAxis xAxis;
+        private   yAxis yAxis;
+        //private  xAxis xScale;
+        //private  yAxis yScale;
         
         private boolean running = true;
 
@@ -54,8 +54,7 @@ public class Main extends Applet implements Runnable, ActionListener{
 
         public void init ()
         {
-                //Color white = new Color (11);
-                // this.setBackground(white);
+               
                 setSize(screenX, screenY);
                 g1 = new Graph (0, "x^3");
                 xAxis = new xAxis (0);
@@ -65,20 +64,20 @@ public class Main extends Applet implements Runnable, ActionListener{
                function_Label.setBounds(546, 537, 29, 14);
                add (function_Label);
                
-           	function = new TextField();
-           	function.setBounds(585, 534, 86, 20);
-    		add(function);
-    		function.setColumns(10);
+                function = new TextField();
+                function.setBounds(585, 534, 86, 20);
+                add(function);
+                function.setColumns(10);
                
-           	Submit = new Button("Submit");
-           	Submit.setBounds(681, 533, 89, 23);
-    		add(Submit);
-    		Submit.addActionListener(this);
-    		
-    		Clear = new Button("Clear");    		
-    		Clear.setBounds(681, 507, 89, 23);
-    		add(Clear);
-    		
+                Submit = new Button("Submit");
+                Submit.setBounds(681, 533, 89, 23);
+                add(Submit);
+                Submit.addActionListener(this);
+                
+                Clear = new Button("Clear");                    
+                Clear.setBounds(681, 507, 89, 23);
+                add(Clear);
+                
                 this.addMouseListener(new MouseAdapter()
                 {
 
@@ -113,7 +112,7 @@ public class Main extends Applet implements Runnable, ActionListener{
                 {
                         public void mouseDragged(MouseEvent evt)
                         {
-                        	
+                                
                                 g1.update(evt.getXOnScreen()- posX , evt.getYOnScreen() - posY );  
                                 xAxis.update(evt.getXOnScreen()- posX , evt.getYOnScreen() - posY );
                                 yAxis.update(evt.getXOnScreen()- posX , evt.getYOnScreen() - posY );
@@ -186,18 +185,18 @@ g.drawString("("+(posX - finalOffsetX-screenX/2) + " ," + -(posY- finalOffsetY- 
                 g.drawLine(yAxis.points.get(0).x , yAxis.points.get(0).y, yAxis.points.get(7).x , yAxis.points.get(7).y );
               
                 //  drawing x_scale & y_scale 
-            	int n = -25;
+                int n = -25;
           
             
               
 
 
              try {
-				Thread.sleep(10);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+                                Thread.sleep(10);
+                        } catch (InterruptedException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                        }
 
         }
 
@@ -224,13 +223,13 @@ g.drawString("("+(posX - finalOffsetX-screenX/2) + " ," + -(posY- finalOffsetY- 
         
         public void  actionPerformed(ActionEvent e) 
         {
-    		if (e.getSource() == Submit)
-    		{
-    		g1.changeFunction (function.getText()); //give the graph a new function
-    		g1.calculatePoints(0);
-    		}
-    		
-    		
+                if (e.getSource() == Submit)
+                {
+                g1.changeFunction (function.getText()); //give the graph a new function
+                g1.calculatePoints(0);
+                }
+                
+                
         }
         public void destroy ()
         {

@@ -2,14 +2,14 @@ import java.awt.Point;
 import java.util.ArrayList;
 
 public class yAxis {
-	
-	 int x = Main.screenX/2 ;
+        
+         int x = Main.screenX/2 ;
      int y = 0;
      
       ArrayList <Point> points = new ArrayList<Point> ();
-	 
-	
-	  public yAxis (int startY)
+         
+        
+          public yAxis (int startY)
       {
               calculatePoints (startY);
       }
@@ -26,14 +26,14 @@ public class yAxis {
                       nextPoint();
               }                  
       }
-	 
-	 
-	
+         
+         
+        
         
      
      public void nextPoint ()
      {          
-    	 y+= 100;
+         y+= 100;
          Point newPoint = new Point (x + Main.finalOffsetX ,y + Main.finalOffsetY);
          points.add(newPoint); 
             
